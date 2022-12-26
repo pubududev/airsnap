@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Airsnap - Let's Check Your Air Qality</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="fav.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <!-- jQuery Modal -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+            <h1>Current Air Quality</h1>
+            <div class="wrapper">
+                <div class="container">
+
+                    <!-- <button id="btn">Hello</button> -->
+
+                    <div class="card" id="temp">
+                        <img class="icon" src="Icon/temp.png">
+                        <div class="box">
+                            <div class="percent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="temp-value" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2><span id="temp-num">0</span><b>C</b></h2>
+                            </div>
+                            <h3>Temparature</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="hum">
+                        <img class="icon" src="Icon/humidity.png">
+                        <div class="box">
+                            <div class="percent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="hum-value" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2><span id="hum-num">0</span><b>%</b></h2>
+                            </div>
+                            <h3>Humidity</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="aq">
+                        <img class="icon" src="Icon/aq.png">
+                        <div class="box">
+                            <div class="percent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="aq-value" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2><span id="aq-num">0</span><b>PPM</b></h2>
+                            </div>
+                            <h3>Air Quality</h3>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card" id="no2">
+                        <img class="icon" src="Icon/gas.png">
+                        <div class="box">
+                            <div class="percent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="no2-value" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2><span id="no2-num">0</span><b>PPM</b></h2>
+                            </div>
+                            <h3>NO2</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="nh3">
+                        <img class="icon" src="Icon/gas.png">
+                        <div class="box">
+                            <div class="percent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="nh3-value" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2><span id="nh3-num">0</span><b>PPM</b></h2>
+                            </div>
+                            <h3>NH3</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="co">
+                        <img class="icon" src="Icon/gas.png">
+                        <div class="box">
+                            <div class="percent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle id="co-value" cx="70" cy="70" r="70"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2><span id="co-num">0</span><b>PPM</b></h2>
+                            </div>
+                            <h3>CO</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+<button id="btn2">PopUp</button>
+
+
+<div id="ex1" class="modal">
+  <div class="caution">
+
+    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+         viewBox="0 0 197.143 197.143" xml:space="preserve">
+    <g>
+        <g>
+            <path style="fill:#010002;" d="M195.031,166.074l-85.592-148.24c-2.226-3.89-6.403-6.306-10.89-6.306
+                c-4.477,0-8.65,2.412-10.894,6.292L1.68,166.747c-2.24,3.876-2.24,8.689,0,12.565c2.24,3.887,6.413,6.302,10.887,6.302h172.01
+                c6.929,0,12.565-5.644,12.565-12.58C197.143,170.447,196.377,167.956,195.031,166.074z M184.577,178.324H12.571
+                c-1.882,0-3.643-1.009-4.585-2.645c-0.945-1.636-0.948-3.665,0-5.3L93.961,21.456c0.941-1.628,2.698-2.645,4.588-2.645
+                c1.882,0,3.654,1.016,4.592,2.645l85.764,148.537c0.626,0.895,0.966,1.943,0.966,3.046
+                C189.871,175.952,187.491,178.324,184.577,178.324z"/>
+            <polygon style="fill:#010002;" points="102.504,134.938 104.486,67.255 89.709,67.255 91.681,134.938 		"/>
+            <path style="fill:#010002;" d="M97.096,144.637c-5.146,0-8.879,3.905-8.879,9.28c0,5.39,3.733,9.294,8.879,9.294
+                c5.229,0,8.886-3.815,8.886-9.294C105.982,148.452,102.328,144.637,97.096,144.637z"/>
+        </g>
+    </g>
+    </svg>
+
+  </div>
+
+  <div class="caution-content">
+    <h2 class="caution-title">Caution!</h2>
+    <h3 id="c-msg">Temparature Too High</h3>
+    <p id="c-value"><span id="c-amount">45</span><span id="c-symbol">C</span></p>
+  </div>
+  <!-- <a href="#" rel="modal:close">Close</a> -->
+</div>
+
+
+
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use-->
+            <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
+
+            <script>
+              
+                // Your web app's Firebase configuration
+                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                const firebaseConfig = {
+                  apiKey: "AIzaSyACLh6UppVHOyGVS-Kf95ap_8u9jkpDIHU",
+                  authDomain: "test-2-600de.firebaseapp.com",
+                  databaseURL: "https://test-2-600de-default-rtdb.firebaseio.com",
+                  projectId: "test-2-600de",
+                  storageBucket: "test-2-600de.appspot.com",
+                  messagingSenderId: "823704624874",
+                  appId: "1:823704624874:web:19ab83e39e5c1bc22e4193",
+                  measurementId: "G-HCZZNBCT3H"
+                };
+    
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+
+                // Initialize Realtime Database and get a reference to the service
+                const database = firebase.database();
+
+                var leadsRef = database.ref('airqality');
+                leadsRef.on('value', function(snapshot) {
+                    snapshot.forEach(function(childSnapshot) {
+                        var childData = childSnapshot.val();
+                        var childKey = childSnapshot.key;
+
+                        if (childKey == 'temp') {
+                            $('#temp-num').text(childData);
+                            $("#temp-value").css("stroke-dashoffset", "calc(440px - (440px * " + childData + ") / 100)");
+
+                            if (childData > 39) {
+                                $('#c-msg').text('TEMPERATURE TOO HIGH.')
+                                $('#c-amount').text(childData)
+                                $('#c-symbol').text('C')
+                                $('#ex1').modal();
+                            }
+
+                        } else if (childKey == 'hum') {
+                            let hum = Math.trunc(childData);
+                            $('#hum-num').text(hum);
+                            $("#hum-value").css("stroke-dashoffset", "calc(440px - (440px * " + hum + ") / 100)");
+                        } else if (childKey == 'aq') {
+                            let aq = Math.trunc(childData);
+                            $("#aq-value").css("stroke-dashoffset", "calc(440px - (440px * " + aq + ") / 100)");
+                            $('#aq-num').text(aq);
+
+                            if (childData > 99) {
+                                $('#c-msg').text('AIR QUALITY LEVEL TOO HIGH.')
+                                $('#c-amount').text(aq)
+                                $('#c-symbol').text('PPM')
+                                $('#ex1').modal();
+                            }
+
+                        } else if (childKey == 'no2') {
+                            $('#no2-num').text(childData);
+                            $("#no2-value").css("stroke-dashoffset", "calc(440px - (440px * " + childData + ") / 100)");
+
+                            if (childData > 4) {
+                                $('#c-msg').text('NO2 LEVEL TOO HIGH.')
+                                $('#c-amount').text(childData)
+                                $('#c-symbol').text('PPM')
+                                $('#ex1').modal();
+                            }
+
+                        } else if (childKey == 'co') {
+                            $('#co-num').text(childData);
+                            $("#co-value").css("stroke-dashoffset", "calc(440px - (440px * " + childData + ") / 100)");
+
+                            if (childData > 30) {
+                                $('#c-msg').text('CO LEVEL TOO HIGH.')
+                                $('#c-amount').text(childData)
+                                $('#c-symbol').text('PPM')
+                                $('#ex1').modal();
+                            }
+
+                        } else if (childKey == 'nh3') {
+                            $('#nh3-num').text(childData);
+                            $("#nh3-value").css("stroke-dashoffset", "calc(440px - (440px * " + childData + ") / 100)");
+
+                            if (childData > 3) {
+                                $('#c-msg').text('NH3 LEVEL TOO HIGH.')
+                                $('#c-amount').text(childData)
+                                $('#c-symbol').text('PPM')
+                                $('#ex1').modal();
+                            }
+
+                        }
+
+
+                    });
+                });
+
+
+                firebase.database().ref('airqality').on('child_changed', (snap) => {
+                    // console.log('update in action', snap.val());
+                    // console.log('update in action', snap.key);
+
+                    if (snap.key == 'temp') {
+                        let temp = snap.val();
+                        $('#temp-num').text(snap.val());
+                        $("#temp-value").css("stroke-dashoffset", "calc(440px - (440px * " + temp + ") / 100)");
+
+                        if (temp > 39) {
+                            $('#c-msg').text('TEMPERATURE TOO HIGH.')
+                            $('#c-amount').text(childData)
+                            $('#c-symbol').text('C')
+                            $('#ex1').modal();
+                        }
+
+                    } else if (snap.key == 'hum') {
+                        let hum = Math.trunc(snap.val());
+                        $('#hum-num').text(hum);
+                        $("#hum-value").css("stroke-dashoffset", "calc(440px - (440px * " + hum + ") / 100)");
+
+                    } else if (snap.key == 'aq') {
+                        let aq = Math.trunc(snap.val());
+                        $('#aq-num').text(aq);
+                        $("#aq-value").css("stroke-dashoffset", "calc(440px - (440px * " + aq + ") / 100)");
+
+                        if (aq > 99) {
+                            $('#c-msg').text('AIR QUALITY LEVEL TOO HIGH.')
+                            $('#c-amount').text(aq)
+                            $('#c-symbol').text('PPM')
+                            $('#ex1').modal();
+                        }
+
+                    } else if (snap.key == 'no2') {
+                        let no2 = snap.val();
+                        $('#no2-num').text(snap.val());
+                        $("#no2-value").css("stroke-dashoffset", "calc(440px - (440px * " + no2 + ") / 100)");
+
+                        if (no2 > 4) {
+                            $('#c-msg').text('NO2 LEVEL TOO HIGH.')
+                            $('#c-amount').text(childData)
+                            $('#c-symbol').text('PPM')
+                            $('#ex1').modal();
+                        }
+
+                    } else if (snap.key == 'co') {
+                        $('#co-num').text(snap.val());
+                        let co = snap.val();
+                        $("#co-value").css("stroke-dashoffset", "calc(440px - (440px * " + co + ") / 100)");
+
+                        if (co > 30) {
+                            $('#c-msg').text('CO LEVEL TOO HIGH.')
+                            $('#c-amount').text(childData)
+                            $('#c-symbol').text('PPM')
+                            $('#ex1').modal();
+                        }
+
+                    } else if (snap.key == 'nh3') {
+                        $('#nh3-num').text(snap.val());
+                        let nh3 = snap.val();
+                        $("#nh3-value").css("stroke-dashoffset", "calc(440px - (440px * " + nh3 + ") / 100)");
+
+                        if (nh3 > 3) {
+                            $('#c-msg').text('NH3 LEVEL TOO HIGH.')
+                            $('#c-amount').text(childData)
+                            $('#c-symbol').text('PPM')
+                            $('#ex1').modal();
+                        }
+
+                    }
+
+                });
+
+
+            </script>
+
+        <script src="app.js"></script>
+
+    </body>
+</html>
