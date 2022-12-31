@@ -240,7 +240,7 @@
                             $('#nh3-num').text(childData);
                             $("#nh3-value").css("stroke-dashoffset", "calc(440px - (440px * " + childData + ") / 100)");
 
-                            if (childData > 3) {
+                            if (childData > 10) {
                                 $('#c-msg').text('NH3 LEVEL TOO HIGH.')
                                 $('#c-amount').text(childData)
                                 $('#c-symbol').text('PPM')
@@ -316,7 +316,7 @@
                         let nh3 = snap.val();
                         $("#nh3-value").css("stroke-dashoffset", "calc(440px - (440px * " + nh3 + ") / 100)");
 
-                        if (nh3 > 3) {
+                        if (nh3 > 10) {
                             $('#c-msg').text('NH3 LEVEL TOO HIGH.')
                             $('#c-amount').text(childData)
                             $('#c-symbol').text('PPM')
